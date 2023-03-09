@@ -1,8 +1,28 @@
-﻿@{
+﻿@model IndexViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>Fish Watch</h1>
+<table class="table">
+    <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Calories</th>
+        <th>Color</th>
+    </tr>
+    @foreach (var fish in Model.Fishes.OrderBy(x => x.SpeciesName))
+    {
+        <tr>
+            <td>
+                @if (fish.SpeciesIllustrationPhoto != null)
+                {
+                    <img src="@fish.SpeciesIllustrationPhoto.Src" alt="@fish.SpeciesIllustrationPhoto.Alt" style="height: 80px"/>
+                }
+            </td>
+            <td>@fish.SpeciesName</td>
+            <td>@fish.Calories</td>
+            <td>@fish.Color</td>
+        </tr>
+    }
+</table>
