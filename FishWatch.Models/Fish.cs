@@ -14,6 +14,9 @@ namespace FishWatch.Models
 
     public class Fish
     {
+        [JsonIgnore]
+        public string Id => Path.Replace("/profiles/", "");
+        
         [JsonPropertyName("Fishery Management")]
         public string FisheryManagement { get; set; }
 

@@ -1,0 +1,67 @@
+﻿@using FishWatch.Models
+@model FishViewModel
+@{
+    ViewData["Title"] = $"Fish - {Model.Fish.SpeciesName}";
+}
+
+<h1>@Model.Fish.SpeciesName</h1>
+
+<div class="row">
+    <div class="col-md-8">
+        @if (Model.Fish.SpeciesIllustrationPhoto != null)
+        {
+            <img src="@Model.Fish.SpeciesIllustrationPhoto.Src" alt="@Model.Fish.SpeciesIllustrationPhoto.Alt" style="height: 80px"/>
+        }
+
+        @if (Model.Fish.ScientificName != null)
+        {
+            <h2>Scientific Name</h2>
+            @Model.Fish.ScientificName
+        }
+
+        @if (Model.Fish.Biology != null)
+        {
+            <h2>Biology</h2>
+            @Html.Raw(Model.Fish.Biology)
+        }
+
+        @if (Model.Fish.Location != null)
+        {
+            <h2>Location</h2>
+            @Html.Raw(Model.Fish.Location)
+        }
+
+        @if (Model.Fish.FisheryManagement != null)
+        {
+            <h2>Fishery Management</h2>
+            @Html.Raw(Model.Fish.FisheryManagement)
+        }
+
+        @if (Model.Fish.PopulationStatus != null)
+        {
+            <h2>Population Status</h2>
+            @Html.Raw(Model.Fish.PopulationStatus)
+        }
+
+        @if (Model.Fish.Harvest != null)
+        {
+            <h2>Harvest</h2>
+            @Html.Raw(Model.Fish.Harvest)
+        }
+
+    </div>
+
+    <div class="col-md-4">
+        <h2>Nutrition Facts</h2>
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Calories</th>
+                <td>@Model.Fish.Calories</td>
+            </tr>
+            <tr>
+                <th>Carbohydrates</th>
+                <td>@Model.Fish.Carbohydrate</td>
+            </tr>
+        </table>
+    </div>
+</div>

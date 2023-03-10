@@ -25,6 +25,18 @@ public class HomeController : Controller
         return View(model);
     }
 
+    [HttpGet("fish/{id}")]
+    public async Task<IActionResult> Fish(string id)
+    {
+        var model = new FishViewModel();
+        model.Fish = await _fishService.Get(id);
+        if (model.Fish == null)
+        {
+            return RedirectToAction("Index");
+        }
+        return View(model);
+    }
+
     public IActionResult Privacy()
     {
         return View();
