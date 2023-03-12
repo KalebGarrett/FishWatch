@@ -8,9 +8,8 @@
     <tr>
         <th>Image</th>
         <th>Name</th>
-        <th>Calories</th>
-        <th>Carbohydrates</th>
-        <th></th>
+        <th>Availability</th>
+        <th>By Catch</th>
     </tr>
     @foreach (var fish in Model.Fishes.OrderBy(x => x.SpeciesName))
     {
@@ -22,10 +21,10 @@
                 }
             </td>
             <td>@fish.SpeciesName</td>
-            <td>@fish.Calories</td>
-            <td>@fish.Carbohydrate</td>
+            <td>@Html.Raw(fish.Availability)</td>
+            <td>@fish.Bycatch</td>
             <td>
-                <a href="/fish/@fish.Id">View</a>
+               <a href="/fish/@fish.Id"><button class>View</button></a>
             </td>
         </tr>
     }

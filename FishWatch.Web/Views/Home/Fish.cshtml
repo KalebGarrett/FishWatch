@@ -43,6 +43,12 @@
             @Html.Raw(Model.Fish.PopulationStatus)
         }
 
+        @if (Model.Fish.HabitatImpacts != null)
+        {
+            <h2>Habitat Impacts</h2>
+            @Model.Fish.HabitatImpacts
+        }
+
         @if (Model.Fish.Harvest != null)
         {
             <h2>Harvest</h2>
@@ -52,15 +58,43 @@
     </div>
 
     <div class="col-md-4">
-        <h2>Nutrition Facts</h2>
+        <h2 style="padding-bottom: 0.5rem;">Nutrition Facts</h2>
         <table class="table table-bordered table-striped">
             <tr>
                 <th>Calories</th>
                 <td>@Model.Fish.Calories</td>
             </tr>
             <tr>
+                <th>Total Fat</th>
+                <td>@Model.Fish.FatTotal</td>
+            </tr>
+            <tr>
+                <th>Saturated Fat</th>
+                <td>@Model.Fish.SaturatedFattyAcidsTotal</td>
+            </tr>
+            <tr>
+                <th>Cholesterol</th>
+                <td>@Model.Fish.Cholesterol</td>
+            </tr>
+            <tr>
+                <th>Sodium</th>
+                <td>@Model.Fish.Sodium</td>
+            </tr>
+            <tr>
                 <th>Carbohydrates</th>
                 <td>@Model.Fish.Carbohydrate</td>
+            </tr>
+            <tr>
+                <th>Dietary Fiber</th>
+                <td>@Model.Fish.FiberTotalDietary</td>
+            </tr>
+            <tr>
+                <th>Total Sugars</th>
+                <td>@Model.Fish.SugarsTotal</td>
+            </tr>
+            <tr>
+                <th>Protein</th>
+                <td>@Model.Fish.Protein</td>
             </tr>
         </table>
     </div>
