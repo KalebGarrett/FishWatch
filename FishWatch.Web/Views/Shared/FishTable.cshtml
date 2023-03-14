@@ -4,8 +4,8 @@
     <tr>
         <th>Image</th>
         <th>Name</th>
+        <th>Harvest Type</th>
         <th>Availability</th>
-        <th>By Catch</th>
     </tr>
     @foreach (var fish in Model.OrderBy(x => x.SpeciesName))
     {
@@ -17,11 +17,13 @@
                 }
             </td>
             <td>@fish.SpeciesName</td>
+            <td>@fish.HarvestType</td>
             <td>@Html.Raw(fish.Availability)</td>
-            <td>@fish.Bycatch</td>
             <td>
                 <a href="/fish/@fish.Id">
-                    <button type="button" class="info-btn"><i class="fa-solid fa-eye"></i></button>
+                    <button type="button" class="info-btn">
+                        <i class="fa-solid fa-eye"></i>
+                    </button>
                 </a>
             </td>
         </tr>

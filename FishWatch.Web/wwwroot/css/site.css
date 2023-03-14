@@ -13,8 +13,21 @@ html {
     min-height: 100%;
 }
 
+* {
+    font-family: "Comic Sans MS", sans-serif;
+}
+
 .navbar {
     background-color: #51a0f0;
+}
+
+body {
+    background-color: #fafbfc;
+    margin-bottom: 60px;
+}
+
+h2 {
+    padding-top: 1rem;
 }
 
 button {
@@ -38,9 +51,9 @@ button:focus {
     outline: none;
 }
 
-.nav-btn {
-    color: white;
-    background-color: transparent;
+.search-btn:hover {
+    transform: none;
+    opacity: 0.8;
     text-decoration: none;
 }
 
@@ -51,23 +64,4 @@ button:focus {
     text-decoration: none;
     padding:0.4em 1em;
     border-radius: 8px;
-}
-
-.privacy-anchor {
-    color: black;
-    background-color: transparent;
-    text-decoration: none;
-}
-
-body {
-    background-color: #fafbfc;
-    margin-bottom: 60px;
-}
-
-* {
-    font-family: Lato, serif;
-}
-
-h2 {
-    padding-top: 1rem;
 }

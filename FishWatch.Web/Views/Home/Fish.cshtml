@@ -19,16 +19,16 @@
             @Model.Fish.ScientificName
         }
 
-        @if (Model.Fish.Biology != null)
-        {
-            <h2>Biology</h2>
-            @Html.Raw(Model.Fish.Biology)
-        }
-
         @if (Model.Fish.Location != null)
         {
             <h2>Location</h2>
             @Html.Raw(Model.Fish.Location)
+        }
+
+        @if (Model.Fish.Biology != null)
+        {
+            <h2>Biology</h2>
+            @Html.Raw(Model.Fish.Biology)
         }
 
         @if (Model.Fish.FisheryManagement != null)
@@ -49,12 +49,17 @@
             @Model.Fish.HabitatImpacts
         }
 
+        @if (Model.Fish.Bycatch != null)
+        {
+            <h2>By Catch</h2>
+            @Model.Fish.Bycatch
+        }
+
         @if (Model.Fish.Harvest != null)
         {
             <h2>Harvest</h2>
             @Html.Raw(Model.Fish.Harvest)
         }
-
     </div>
 
     <div class="col-md-4">
