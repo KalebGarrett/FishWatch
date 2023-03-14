@@ -50,6 +50,5 @@ namespace FishWatch.Web.Services
             var fishes = Fishes.Where(x => x.SpeciesName.ToLower().Contains(query.ToLower()));
             return fishes.ToList();
         }
-        
     }
 }
