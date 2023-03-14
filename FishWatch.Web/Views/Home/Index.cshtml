@@ -4,28 +4,4 @@
 }
 
 <h1>Fish Watch</h1>
-<table class="table">
-    <tr>
-        <th>Image</th>
-        <th>Name</th>
-        <th>Availability</th>
-        <th>By Catch</th>
-    </tr>
-    @foreach (var fish in Model.Fishes.OrderBy(x => x.SpeciesName))
-    {
-        <tr>
-            <td>
-                @if (fish.SpeciesIllustrationPhoto != null)
-                {
-                    <img src="@fish.SpeciesIllustrationPhoto.Src" alt="@fish.SpeciesIllustrationPhoto.Alt" style="height: 80px"/>
-                }
-            </td>
-            <td>@fish.SpeciesName</td>
-            <td>@Html.Raw(fish.Availability)</td>
-            <td>@fish.Bycatch</td>
-            <td>
-               <a href="/fish/@fish.Id"><button class>View</button></a>
-            </td>
-        </tr>
-    }
-</table>
+@Html.Partial("FishTable", Model.Fishes)

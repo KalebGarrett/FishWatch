@@ -1,0 +1,8 @@
+﻿@model SearchViewModel
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search Results</h1>
+<h2>@Model.Results.Count Results For "@Model.Query"</h2>
+@Html.Partial("FishTable", Model.Results)

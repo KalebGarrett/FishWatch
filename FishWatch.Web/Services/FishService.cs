@@ -39,6 +39,17 @@ namespace FishWatch.Web.Services
             var fish = Fishes.FirstOrDefault(x => x.Id == id.ToLower());
             return fish;
         }
+
+        public async Task<List<Fish>> Search(string query)
+        {
+            if (Fishes == null)
+            {
+                await GetAll();
+            }
+
+            var fishes = Fishes.Where(x => x.SpeciesName.ToLower().Contains(query.ToLower()));
+            return fishes.ToList();
+        }
         
     }
 }

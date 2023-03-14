@@ -6,6 +6,7 @@
     <title>FishWatch - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="~/FishWatch.Web.styles.css" asp-append-version="true"/>
 </head>
 <body>
@@ -20,12 +21,21 @@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><button style="color: white;">Home</button></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><button style="color: white;">Privacy</button></a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">
+                            <button class="nav-btn" style="color: white;">Home</button>
+                        </a>
                     </li>
                 </ul>
+                <form asp-controller="Home" asp-action="SearchResults" method="post">
+                    <div class="input-group">
+                        <div class="form-outline">
+                            <input type="search" id="form1" class="form-control" placeholder="Search" name="Query"/>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
             </div>
         </div>
     </nav>
@@ -38,7 +48,7 @@
 
 <footer class="border-top footer text-muted">
     <div class="container">
-        &copy; 2023 - FishWatch - <a asp-area="" asp-controller="Home" asp-action="Privacy"><button>Privacy</button></a>
+        &copy; @DateTime.Now.Year - FishWatch
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>
